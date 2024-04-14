@@ -1,0 +1,34 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  width: min(100% - $gap-lg, $container-primary);
+  margin-inline: auto;
+  @include lg {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  @include md {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+    }
+  &--sm {
+    width: min(100% - $gap-lg, $container-sm);
+  }
+}
